@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<script src="//cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
+<script src="lib/main.js"></script>
+<body>
+<p>
+ <form class="navbar-form navbar-left">
+    <div class="form-group">
+        <input type="text" placeholder="webaddress" class="form-control" id="webAddress">
+    </div>
+    <button type = "button" class="btn btn-success" id="addButton">add</button>
+    <script>
+        document.getElementById('addButton').addEventListener("click", function() { addRecord(db, document.getElementById('webAddress').value); }, true);
+    </script>
+    </form>
+    </p>
+    <p id="linklist">
+    <script>
+        getAllRecords(db);
+    </script>
+    </p>
+</body>
+</html>
