@@ -7,21 +7,26 @@
 <script src="//cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
 <script src="lib/main.js"></script>
 <body>
-<p>
- <form class="navbar-form navbar-left">
+<div class="jumbotron">
+ <form >
     <div class="form-group">
         <input type="text" placeholder="webaddress" class="form-control" id="webAddress">
     </div>
     <button type = "button" class="btn btn-success" id="addButton">add</button>
+    <button type = "button" class="btn btn-success" id="clearButton">clear</button>
     <script>
         document.getElementById('addButton').addEventListener("click", function() { addRecord(db, document.getElementById('webAddress').value); }, true);
+        document.getElementById('clearButton').addEventListener("click", function() { db.destroy(); }, true);
     </script>
     </form>
+    </div>
     </p>
-    <p id="linklist">
+    <div class="container" id="linklist">
     <script>
         getAllRecords(db);
     </script>
-    </p>
+    </div>
+    <div class="jumbotron" id="articles">
+    </div>
 </body>
 </html>
